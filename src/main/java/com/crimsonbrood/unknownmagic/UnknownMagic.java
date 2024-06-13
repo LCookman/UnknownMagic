@@ -1,5 +1,8 @@
 package com.crimsonbrood.unknownmagic;
 
+import com.crimsonbrood.unknownmagic.blocks.UnknownMagicBlocks;
+import com.crimsonbrood.unknownmagic.items.UnknownMagicCreativeTabs;
+import com.crimsonbrood.unknownmagic.items.UnknownMagicItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,13 +25,13 @@ public class UnknownMagic
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         /*
-         Registering is done through the UnknownMagicEventHandler Class automatically via static event handlers
-
          Server Specific: ServerEventHandler
          Client Specific: ClientEventHandler
-
-         Our registry registration is also handled through the register() event handler
          */
+
+        UnknownMagicCreativeTabs.register(modEventBus);
+        UnknownMagicItems.register(modEventBus);
+        UnknownMagicBlocks.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
