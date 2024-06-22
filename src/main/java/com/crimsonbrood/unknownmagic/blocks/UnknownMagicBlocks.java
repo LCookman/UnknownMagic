@@ -1,6 +1,7 @@
 package com.crimsonbrood.unknownmagic.blocks;
 
 import com.crimsonbrood.unknownmagic.UnknownMagic;
+import com.crimsonbrood.unknownmagic.blocks.custom.SoundBlock;
 import com.crimsonbrood.unknownmagic.items.UnknownMagicItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -30,6 +31,9 @@ public class UnknownMagicBlocks {
     public static final RegistryObject<Block> DEEPSLATE_ETHER_ORE = registerBlock("deepslate_ether_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
                     .strength(5F, 3F).requiresCorrectToolForDrops(), UniformInt.of(4,8)));
+
+    public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
+            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

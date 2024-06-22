@@ -1,0 +1,6 @@
+// 1.20.2	2024-06-19T11:41:54.1032912	Tags for minecraft:block mod id unknownmagic
+0de3d60a146098f201dd8702318b91c94749c4a9 data/forge/tags/blocks/needs_netherite_tool.json
+d2fad748959970c1444fcc22b0314dc22aa50cde data/minecraft/tags/blocks/mineable/pickaxe.json
+4d4b448aff0b680f7d3e962a619aecd439cd5f40 data/minecraft/tags/blocks/needs_diamond_tool.json
+3283497be4d4c798dabcde26068b481aae7bb489 data/minecraft/tags/blocks/needs_iron_tool.json
+ef62ecc32b8849ba4b289ea4b55645ee04fb5f89 data/unknownmagic/tags/blocks/ether_detectable.json

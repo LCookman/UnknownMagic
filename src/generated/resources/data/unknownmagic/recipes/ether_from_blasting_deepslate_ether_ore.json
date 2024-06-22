@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 2.0,
+  "group": "ether",
+  "ingredient": {
+    "item": "unknownmagic:deepslate_ether_ore"
+  },
+  "result": "unknownmagic:ether"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 250,
+  "experience": 2.0,
+  "group": "ether",
+  "ingredient": {
+    "item": "unknownmagic:ether_ore"
+  },
+  "result": "unknownmagic:ether"
+}

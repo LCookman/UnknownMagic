@@ -15,16 +15,24 @@ public class UnknownMagicCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, UnknownMagic.MODID);
 
-    public static final RegistryObject<CreativeModeTab> UNKNOWN_MAGIC_TAB = CREATIVE_MODE_TABS.register("unknownmagic_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(UnknownMagicItems.WHITESTONE.get()))
+    public static final RegistryObject<CreativeModeTab> UNKNOWN_MAGIC_TAB = CREATIVE_MODE_TABS.register(UnknownMagic.MODID + "_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(UnknownMagicItems.ETHER.get()))
                     .title(Component.translatable("creativetab.unknownmagic_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(UnknownMagicItems.WHITESTONE.get());
                         pOutput.accept(UnknownMagicItems.RAW_ETHER.get());
+                        pOutput.accept(UnknownMagicItems.ETHER.get());
+                        pOutput.accept(UnknownMagicItems.VAROOT_STONE.get());
 
                         pOutput.accept(UnknownMagicBlocks.ETHER_ORE.get());
                         pOutput.accept(UnknownMagicBlocks.DEEPSLATE_ETHER_ORE.get());
                         pOutput.accept(UnknownMagicBlocks.WHITESTONE_BLOCK.get());
+
+                        // Tutorial Items (Remove Later or Destroy The Branch)
+                        pOutput.accept(UnknownMagicItems.ETHER_DETECTOR.get());
+                        pOutput.accept(UnknownMagicBlocks.SOUND_BLOCK.get());
+                        pOutput.accept(UnknownMagicItems.STRAWBERRY.get());
+                        pOutput.accept(UnknownMagicItems.PINE_CONE.get());
                     })
                     .build());
 

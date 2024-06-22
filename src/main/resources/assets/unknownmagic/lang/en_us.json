@@ -1,10 +1,21 @@
 {
   "item.unknownmagic.whitestone": "Whitestone",
   "item.unknownmagic.raw_ether": "Raw Ether",
+  "item.unknownmagic.ether": "Ether",
+  "item.unknownmagic.varoot_stone": "Varoot Stone",
 
   "block.unknownmagic.ether_ore": "Ether Ore",
   "block.unknownmagic.deepslate_ether_ore": "Deepslate Ether Ore",
   "block.unknownmagic.whitestone_block": "Block of Whitestone",
 
-  "creativetab.unknownmagic_tab": "Unknown Magic"
+  "creativetab.unknownmagic_tab": "Unknown Magic",
+
+
+  "item.unknownmagic.ether_detector": "Ether Detector",
+  "item.unknownmagic.pine_cone": "Pine Cone",
+  "item.unknownmagic.strawberry": "Strawberry",
+  "block.unknownmagic.sound_block": "Sound Block",
+
+  "tooltip.unknownmagic.ether_detector.tooltip": "Finds valuables underground.",
+  "tooltip.unknownmagic.sound_block.tooltip": "Hey look a didgeridoo!"
 }
