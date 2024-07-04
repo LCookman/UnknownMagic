@@ -43,5 +43,12 @@ public class UnknownMagicBlockTagGenerator extends BlockTagsProvider {
 
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(UnknownMagicBlocks.SOUND_BLOCK.get());
+
+        this.tag(BlockTags.FENCES)
+                .add(UnknownMagicBlocks.WHITESTONE_FENCE.get());
+        this.tag(BlockTags.FENCE_GATES)
+                .add(UnknownMagicBlocks.WHITESTONE_FENCE_GATE.get());
+        this.tag(BlockTags.WALLS)
+                .add(UnknownMagicBlocks.WHITESTONE_WALL.get());
     }
 }

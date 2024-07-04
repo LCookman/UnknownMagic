@@ -33,6 +33,19 @@ public class UnknownMagicCreativeTabs {
                         pOutput.accept(UnknownMagicBlocks.SOUND_BLOCK.get());
                         pOutput.accept(UnknownMagicItems.STRAWBERRY.get());
                         pOutput.accept(UnknownMagicItems.PINE_CONE.get());
+
+                        pOutput.accept(UnknownMagicBlocks.WHITESTONE_STAIRS.get());
+                        pOutput.accept(UnknownMagicBlocks.WHITESTONE_SLAB.get());
+
+                        pOutput.accept(UnknownMagicBlocks.WHITESTONE_BUTTON.get());
+                        pOutput.accept(UnknownMagicBlocks.WHITESTONE_PRESSURE_PLATE.get());
+
+                        pOutput.accept(UnknownMagicBlocks.WHITESTONE_FENCE.get());
+                        pOutput.accept(UnknownMagicBlocks.WHITESTONE_FENCE_GATE.get());
+                        pOutput.accept(UnknownMagicBlocks.WHITESTONE_WALL.get());
+
+                        pOutput.accept(UnknownMagicBlocks.WHITESTONE_DOOR.get());
+                        pOutput.accept(UnknownMagicBlocks.WHITESTONE_TRAPDOOR.get());
                     })
                     .build());
 

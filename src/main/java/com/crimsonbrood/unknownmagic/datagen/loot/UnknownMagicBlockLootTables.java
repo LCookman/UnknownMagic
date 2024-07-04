@@ -33,6 +33,19 @@ public class UnknownMagicBlockLootTables extends BlockLootSubProvider {
 
         // TODO: Remove this later
         this.dropSelf(UnknownMagicBlocks.SOUND_BLOCK.get());
+
+        this.dropSelf(UnknownMagicBlocks.WHITESTONE_STAIRS.get());
+        this.dropSelf(UnknownMagicBlocks.WHITESTONE_BUTTON.get());
+        this.dropSelf(UnknownMagicBlocks.WHITESTONE_PRESSURE_PLATE.get());
+        this.dropSelf(UnknownMagicBlocks.WHITESTONE_TRAPDOOR.get());
+        this.dropSelf(UnknownMagicBlocks.WHITESTONE_FENCE.get());
+        this.dropSelf(UnknownMagicBlocks.WHITESTONE_FENCE_GATE.get());
+        this.dropSelf(UnknownMagicBlocks.WHITESTONE_WALL.get());
+
+        this.add(UnknownMagicBlocks.WHITESTONE_SLAB.get(),
+                block -> createSlabItemTable(UnknownMagicBlocks.WHITESTONE_SLAB.get()));
+        this.add(UnknownMagicBlocks.WHITESTONE_DOOR.get(),
+                block -> createDoorTable(UnknownMagicBlocks.WHITESTONE_DOOR.get()));
     }
 
     protected LootTable.Builder createEtherOreDrop(Block pBlock, Item pItem) {
