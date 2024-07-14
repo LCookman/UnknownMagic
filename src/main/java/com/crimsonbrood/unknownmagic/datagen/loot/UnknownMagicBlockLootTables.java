@@ -7,9 +7,11 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.predicates.ConditionUserBuilder;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -31,6 +33,8 @@ public class UnknownMagicBlockLootTables extends BlockLootSubProvider {
                 block -> createEtherOreDrop(UnknownMagicBlocks.DEEPSLATE_ETHER_ORE.get(), UnknownMagicItems.RAW_ETHER.get())
         );
 
+        this.dropWhenSilkTouch(UnknownMagicBlocks.VAROOT_STONE.get());
+
         // TODO: Remove this later
         this.dropSelf(UnknownMagicBlocks.SOUND_BLOCK.get());
 
@@ -48,14 +52,18 @@ public class UnknownMagicBlockLootTables extends BlockLootSubProvider {
                 block -> createDoorTable(UnknownMagicBlocks.WHITESTONE_DOOR.get()));
     }
 
-    protected LootTable.Builder createEtherOreDrop(Block pBlock, Item pItem) {
-        return createSilkTouchDispatchTable(pBlock,
+    protected LootTable.Builder createEtherOreDrop(Block block, Item item) {
+        return createSilkTouchDispatchTable(block,
                 this.applyExplosionDecay(
-                        pBlock,
-                        LootItem.lootTableItem(pItem)
+                        block,
+                        LootItem.lootTableItem(item)
                                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
                 )
         );
+    }
+
+    protected void createVarootSilkDrop(Block block) {
+        this.add(block, createSilkTouchOnlyTable(block));
     }
 
     @Override

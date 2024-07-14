@@ -1,7 +1,8 @@
-// 1.20.2	2024-07-01T18:55:07.3690405	Block States: unknownmagic
+// 1.20.2	2024-07-11T10:39:09.2865078	Block States: unknownmagic
 fc0a2221a4c14ba55c0bb92959994da8811ce3ee assets/unknownmagic/blockstates/deepslate_ether_ore.json
 94bf5ded43b6ba897130a1dc7f1d784756181dc1 assets/unknownmagic/blockstates/ether_ore.json
 91c50aab6cde4c8f29d68af72a49280e97071f63 assets/unknownmagic/blockstates/sound_block.json
+13a8613cc73a215f72a7cc38db6c8b4c68caf465 assets/unknownmagic/blockstates/varoot_stone.json
 7158c5232a9f08e9e9dcc8ac843a5236a2d8bdd6 assets/unknownmagic/blockstates/whitestone_block.json
 3cd39bbfe4b3e30fed3584fe7eb3f8b7932cdd97 assets/unknownmagic/blockstates/whitestone_button.json
 debaeb81bb65b481bb82d1a0b2d4f333dab15f23 assets/unknownmagic/blockstates/whitestone_door.json

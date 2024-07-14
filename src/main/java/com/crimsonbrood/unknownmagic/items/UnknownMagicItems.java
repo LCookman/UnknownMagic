@@ -23,14 +23,14 @@ public class UnknownMagicItems {
     public static final RegistryObject<Item> ETHER = ITEMS.register("ether",
             () -> new EtherItem(new Item.Properties().stacksTo(16)));
 
-    public static final RegistryObject<Item> VAROOT_STONE = ITEMS.register("varoot_stone",
-            () -> new Item(new Item.Properties()));
+//    public static final RegistryObject<Item> VAROOT_STONE = ITEMS.register("varoot_stone",
+//            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ETHER_DETECTOR = ITEMS.register("ether_detector",
+            () -> new EtherDetectorItem(new Item.Properties().durability(500)));
 
 
     // TODO: Remove the below registered items and associated textures/blocks as they are mainly just tutorial items
-    public static final RegistryObject<Item> ETHER_DETECTOR = ITEMS.register("ether_detector",
-            () -> new EtherDetectorItem(new Item.Properties().durability(150)));
-
     public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry",
             () -> new Item(new Item.Properties().food(UnknownMagicFoods.STRAWBERRY)));
 

@@ -1,9 +1,9 @@
-// 1.20.2	2024-07-01T18:55:07.3710408	Tags for minecraft:block mod id unknownmagic
+// 1.20.2	2024-07-11T11:58:36.4342384	Tags for minecraft:block mod id unknownmagic
 0de3d60a146098f201dd8702318b91c94749c4a9 data/forge/tags/blocks/needs_netherite_tool.json
 06abd04b820aaf52e68131b1df2c04c22fe8ef17 data/minecraft/tags/blocks/fences.json
 c5b72f991db2c8d99340eefdfcdd6c1c91b32bf1 data/minecraft/tags/blocks/fence_gates.json
-d2fad748959970c1444fcc22b0314dc22aa50cde data/minecraft/tags/blocks/mineable/pickaxe.json
-4d4b448aff0b680f7d3e962a619aecd439cd5f40 data/minecraft/tags/blocks/needs_diamond_tool.json
+4166b8ea8c8c2c1ee1e497b10226d3869ae77256 data/minecraft/tags/blocks/mineable/pickaxe.json
+fcb50f1a941b99fcd747be79e10160649bd0a799 data/minecraft/tags/blocks/needs_diamond_tool.json
 3283497be4d4c798dabcde26068b481aae7bb489 data/minecraft/tags/blocks/needs_iron_tool.json
 edca301cdba63973db8b0078175198d4ad3bccba data/minecraft/tags/blocks/walls.json
 ef62ecc32b8849ba4b289ea4b55645ee04fb5f89 data/unknownmagic/tags/blocks/ether_detectable.json

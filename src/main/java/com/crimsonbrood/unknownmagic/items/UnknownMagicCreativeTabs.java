@@ -6,7 +6,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -22,8 +21,8 @@ public class UnknownMagicCreativeTabs {
                         pOutput.accept(UnknownMagicItems.WHITESTONE.get());
                         pOutput.accept(UnknownMagicItems.RAW_ETHER.get());
                         pOutput.accept(UnknownMagicItems.ETHER.get());
-                        pOutput.accept(UnknownMagicItems.VAROOT_STONE.get());
 
+                        pOutput.accept(UnknownMagicBlocks.VAROOT_STONE.get());
                         pOutput.accept(UnknownMagicBlocks.ETHER_ORE.get());
                         pOutput.accept(UnknownMagicBlocks.DEEPSLATE_ETHER_ORE.get());
                         pOutput.accept(UnknownMagicBlocks.WHITESTONE_BLOCK.get());

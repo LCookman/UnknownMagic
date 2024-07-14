@@ -1,6 +1,5 @@
-// 1.20.2	2024-07-01T19:22:21.3837765	Item Models: unknownmagic
+// 1.20.2	2024-07-08T12:24:03.0354845	Item Models: unknownmagic
 caa68968a63ec93a088fac44cdc3ee390a60d69d assets/unknownmagic/models/item/ether.json
-3eb1468cda2b000b5131ab7f2c5416fca63ece33 assets/unknownmagic/models/item/ether_detector.json
 30fd9667e60e667624386cd3f0a1f2492980fd96 assets/unknownmagic/models/item/pine_cone.json
 c9cb41e9a27ad7a2d60de44e50876cf62501f749 assets/unknownmagic/models/item/raw_ether.json
 62e4aaf0e56ec2375573718fb905fe1de9e6a025 assets/unknownmagic/models/item/strawberry.json
@@ -14,4 +13,4 @@ d352739f012c5415677efbd21dc286bd5c1b6d9f assets/unknownmagic/models/item/whitest
 add4033375478437a75b550b8a655e6ac94ffd39 assets/unknownmagic/models/item/whitestone_slab.json
 800b67affff0b7dc0f83ccc4f1a11b0b75ba4283 assets/unknownmagic/models/item/whitestone_stairs.json
 96b16167e206a29e256d8f77c5f7dc4afaccdaef assets/unknownmagic/models/item/whitestone_trapdoor.json
-c9236f81b7c7b1612207ac99bdf57430809662e7 assets/unknownmagic/models/item/whitestone_wall.json
+2cff70fb79f885f5b57d11dcd8a9054825b5996e assets/unknownmagic/models/item/whitestone_wall.json

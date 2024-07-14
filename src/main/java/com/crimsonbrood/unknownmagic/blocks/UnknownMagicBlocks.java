@@ -2,6 +2,7 @@ package com.crimsonbrood.unknownmagic.blocks;
 
 import com.crimsonbrood.unknownmagic.UnknownMagic;
 import com.crimsonbrood.unknownmagic.blocks.custom.SoundBlock;
+import com.crimsonbrood.unknownmagic.blocks.custom.VarootStoneBlock;
 import com.crimsonbrood.unknownmagic.items.UnknownMagicItems;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -10,6 +11,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -31,6 +34,16 @@ public class UnknownMagicBlocks {
     public static final RegistryObject<Block> DEEPSLATE_ETHER_ORE = registerBlock("deepslate_ether_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
                     .strength(5F, 3F).requiresCorrectToolForDrops(), UniformInt.of(4,8)));
+
+    public static final RegistryObject<Block> VAROOT_STONE = registerBlock("varoot_stone",
+            () -> new VarootStoneBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .strength(5f)
+                    .sound(SoundType.STONE)
+                    .noOcclusion()
+                    .lightLevel((blockState) -> {
+                        return 1 + 3 * blockState.getValue(VarootStoneBlock.STONES);
+                    })));
 
     public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
             () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));

@@ -23,13 +23,15 @@ public class UnknownMagicItemModelProvider extends ItemModelProvider {
         simpleItem(UnknownMagicItems.RAW_ETHER);
         simpleItem(UnknownMagicItems.ETHER);
         simpleItem(UnknownMagicItems.WHITESTONE);
-        simpleItem(UnknownMagicItems.VAROOT_STONE);
 
-        simpleItem(UnknownMagicItems.ETHER_DETECTOR);
+        // Remove ether detector here since we made a custom model
+        // simpleItem(UnknownMagicItems.ETHER_DETECTOR);
         simpleItem(UnknownMagicItems.STRAWBERRY);
         simpleItem(UnknownMagicItems.PINE_CONE);
 
+        // When generating models we need to generate the item models for corresponding blocks
         simpleBlockItem(UnknownMagicBlocks.WHITESTONE_DOOR);
+        simpleBlockItem(UnknownMagicBlocks.VAROOT_STONE);
 
         evenSimplerBlockItem(UnknownMagicBlocks.WHITESTONE_STAIRS);
         evenSimplerBlockItem(UnknownMagicBlocks.WHITESTONE_SLAB);

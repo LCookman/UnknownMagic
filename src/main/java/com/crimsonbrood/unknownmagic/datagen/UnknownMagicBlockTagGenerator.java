@@ -30,7 +30,8 @@ public class UnknownMagicBlockTagGenerator extends BlockTagsProvider {
                 .add(UnknownMagicBlocks.ETHER_ORE.get(),
                         UnknownMagicBlocks.DEEPSLATE_ETHER_ORE.get(),
                         UnknownMagicBlocks.WHITESTONE_BLOCK.get(),
-                        UnknownMagicBlocks.SOUND_BLOCK.get()
+                        UnknownMagicBlocks.SOUND_BLOCK.get(),
+                        UnknownMagicBlocks.VAROOT_STONE.get()
                 );
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
@@ -38,7 +39,8 @@ public class UnknownMagicBlockTagGenerator extends BlockTagsProvider {
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(UnknownMagicBlocks.ETHER_ORE.get(),
-                        UnknownMagicBlocks.DEEPSLATE_ETHER_ORE.get()
+                        UnknownMagicBlocks.DEEPSLATE_ETHER_ORE.get(),
+                        UnknownMagicBlocks.VAROOT_STONE.get()
                 );
 
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
