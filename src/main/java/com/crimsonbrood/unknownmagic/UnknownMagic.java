@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 public class UnknownMagic
 {
     public static final String MODID = "unknownmagic";
+    public static final String MODNAME = "Unknown Magic";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
