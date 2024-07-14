@@ -51,42 +51,4 @@ public class UnknownMagicEventHandler {
         LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
         Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
     }
-
-    // TODO: Pull out this method into a creative event handler class?
-    // Add the example block item to the building blocks tab
-    @SubscribeEvent
-    public static void onAddCreative(BuildCreativeModeTabContentsEvent event) {
-        RegistryObject<Item> umItem = RegistryObject.create(new ResourceLocation(UnknownMagic.MODID, "um_item"), ForgeRegistries.ITEMS);
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(umItem);
-        }
-    }
-
-    @SubscribeEvent
-    public static void onRegister(RegisterEvent event) {
-        // TODO: This is probably not the ideal way to do this we need a RegistryObject<Block> as instantiating this here isn't ideal. For now we can create them inline
-        LOGGER.info("Hello from the register() event!");
-
-        event.register(ForgeRegistries.Keys.BLOCKS, blockRegisterHelper -> {
-            blockRegisterHelper.register(new ResourceLocation(MODID, "um_block"), new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
-        });
-
-        RegistryObject<Block> umBlock = RegistryObject.create(new ResourceLocation(MODID,"um_block"), ForgeRegistries.BLOCKS);
-        event.register(ForgeRegistries.Keys.ITEMS, itemRegisterHelper -> {
-            itemRegisterHelper.register(new ResourceLocation(MODID, "um_block"), new BlockItem(umBlock.get(), new Item.Properties()));
-
-            itemRegisterHelper.register(new ResourceLocation(MODID, "um_item"), new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .alwaysEat().nutrition(4).saturationMod(4f).build())));
-        });
-
-        RegistryObject<Item> umItem = RegistryObject.create(new ResourceLocation(MODID, "um_block"), ForgeRegistries.ITEMS);
-        event.register(Registries.CREATIVE_MODE_TAB, creativeModeTabRegisterHelper -> {
-            creativeModeTabRegisterHelper.register(new ResourceLocation("um_tab"), CreativeModeTab.builder()
-                    .withTabsBefore(CreativeModeTabs.COMBAT)
-                    .icon(Items.WRITABLE_BOOK::getDefaultInstance)
-                    .displayItems((parameters, output) -> {
-                        output.accept(umItem.get());
-                    }).build());
-        });
-    }
 }
