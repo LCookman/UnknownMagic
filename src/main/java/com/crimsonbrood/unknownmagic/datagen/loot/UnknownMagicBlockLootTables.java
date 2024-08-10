@@ -61,13 +61,4 @@ public class UnknownMagicBlockLootTables extends BlockLootSubProvider {
                 )
         );
     }
-
-    protected void createVarootSilkDrop(Block block) {
-        this.add(block, createSilkTouchOnlyTable(block));
-    }
-
-    @Override
-    protected Iterable<Block> getKnownBlocks() {
-        return UnknownMagicBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
-    }
 }

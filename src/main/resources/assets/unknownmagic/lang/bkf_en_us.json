@@ -1,7 +1,7 @@
 {
   "item.unknownmagic.whitestone": "Whitestone",
   "item.unknownmagic.raw_ether": "Raw Ether",
-  "item.unknownmagic.ether": "Ether",
+  "item.unknownmagic.solidified_ether": "Solidified Ether",
 
   "block.unknownmagic.ether_ore": "Ether Ore",
   "block.unknownmagic.deepslate_ether_ore": "Deepslate Ether Ore",
@@ -27,5 +27,6 @@
   "block.unknownmagic.sound_block": "Sound Block",
 
   "tooltip.unknownmagic.ether_detector.tooltip": "Finds valuables underground.",
-  "tooltip.unknownmagic.sound_block.tooltip": "Hey look a didgeridoo!"
+  "tooltip.unknownmagic.sound_block.tooltip": "Hey look a didgeridoo!",
+  "creativetab.ether_tab": "Ether"
 }

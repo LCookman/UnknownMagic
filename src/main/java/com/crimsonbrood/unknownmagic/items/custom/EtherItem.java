@@ -16,7 +16,7 @@ public class EtherItem extends Item {
     @Override
     public void onInventoryTick(ItemStack stack, Level level, Player player, int slotIndex, int selectedIndex) {
         super.onInventoryTick(stack, level, player, slotIndex, selectedIndex);
-        if (stack.is(UnknownMagicItems.ETHER.get())) {
+        if (stack.is(UnknownMagicItems.SOLIDIFIED_ETHER.get())) {
             player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20));
         }
     }

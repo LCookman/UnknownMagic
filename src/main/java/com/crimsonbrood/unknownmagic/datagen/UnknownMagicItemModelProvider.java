@@ -20,29 +20,28 @@ public class UnknownMagicItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(UnknownMagicItems.RAW_ETHER);
-        simpleItem(UnknownMagicItems.ETHER);
-        simpleItem(UnknownMagicItems.WHITESTONE);
-
-        // Remove ether detector here since we made a custom model
-        // simpleItem(UnknownMagicItems.ETHER_DETECTOR);
-        simpleItem(UnknownMagicItems.STRAWBERRY);
-        simpleItem(UnknownMagicItems.PINE_CONE);
+//        simpleItem(UnknownMagicItems.RAW_ETHER);
+//        simpleItem(UnknownMagicItems.ETHER);
+//        simpleItem(UnknownMagicItems.WHITESTONE);
+//
+//        // Remove ether detector here since we made a custom model
+//        // simpleItem(UnknownMagicItems.ETHER_DETECTOR);
+//        simpleItem(UnknownMagicItems.STRAWBERRY);
+//        simpleItem(UnknownMagicItems.PINE_CONE);
 
         // When generating models we need to generate the item models for corresponding blocks
-        simpleBlockItem(UnknownMagicBlocks.WHITESTONE_DOOR);
-        simpleBlockItem(UnknownMagicBlocks.VAROOT_STONE);
+//        simpleBlockItem(UnknownMagicBlocks.WHITESTONE_DOOR);
+//        simpleBlockItem(UnknownMagicBlocks.VAROOT_STONE);
 
-        evenSimplerBlockItem(UnknownMagicBlocks.WHITESTONE_STAIRS);
-        evenSimplerBlockItem(UnknownMagicBlocks.WHITESTONE_SLAB);
-        evenSimplerBlockItem(UnknownMagicBlocks.WHITESTONE_PRESSURE_PLATE);
-        evenSimplerBlockItem(UnknownMagicBlocks.WHITESTONE_FENCE_GATE);
-
-        fenceItem(UnknownMagicBlocks.WHITESTONE_FENCE, UnknownMagicBlocks.WHITESTONE_BLOCK);
-        buttonItem(UnknownMagicBlocks.WHITESTONE_BUTTON, UnknownMagicBlocks.WHITESTONE_BLOCK);
-        wallItem(UnknownMagicBlocks.WHITESTONE_WALL, UnknownMagicBlocks.WHITESTONE_BLOCK);
-        trapdoorItem(UnknownMagicBlocks.WHITESTONE_TRAPDOOR);
-
+//        evenSimplerBlockItem(UnknownMagicBlocks.WHITESTONE_STAIRS);
+//        evenSimplerBlockItem(UnknownMagicBlocks.WHITESTONE_SLAB);
+//        evenSimplerBlockItem(UnknownMagicBlocks.WHITESTONE_PRESSURE_PLATE);
+//        evenSimplerBlockItem(UnknownMagicBlocks.WHITESTONE_FENCE_GATE);
+//
+//        fenceItem((Block)UnknownMagicBlocks.WHITESTONE_FENCE.get(), (Block) UnknownMagicBlocks.WHITESTONE_BLOCK.get());
+//        buttonItem(UnknownMagicBlocks.WHITESTONE_BUTTON, UnknownMagicBlocks.WHITESTONE_BLOCK);
+//        wallItem(UnknownMagicBlocks.WHITESTONE_WALL, UnknownMagicBlocks.WHITESTONE_BLOCK);
+//        trapdoorItem(UnknownMagicBlocks.WHITESTONE_TRAPDOOR);
     }
 
     public void trapdoorItem(RegistryObject<Block> block) {
@@ -72,7 +71,7 @@ public class UnknownMagicItemModelProvider extends ItemModelProvider {
         );
     }
 
-    private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
+    public ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(UnknownMagic.MODID, "item/" + item.getId().getPath()));

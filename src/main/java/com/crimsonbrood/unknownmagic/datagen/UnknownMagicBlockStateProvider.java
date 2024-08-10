@@ -18,29 +18,29 @@ public class UnknownMagicBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(UnknownMagicBlocks.ETHER_ORE);
-        blockWithItem(UnknownMagicBlocks.DEEPSLATE_ETHER_ORE);
+//        blockWithItem(UnknownMagicBlocks.ETHER_ORE);
+//        blockWithItem(UnknownMagicBlocks.DEEPSLATE_ETHER_ORE);
 
-        blockWithItem(UnknownMagicBlocks.WHITESTONE_BLOCK);
+//        blockWithItem(UnknownMagicBlocks.WHITESTONE_BLOCK);
 
-        stairsBlock((StairBlock) UnknownMagicBlocks.WHITESTONE_STAIRS.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
-        slabBlock((SlabBlock) UnknownMagicBlocks.WHITESTONE_SLAB.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
+//        stairsBlock((StairBlock) UnknownMagicBlocks.WHITESTONE_STAIRS.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
+//        slabBlock((SlabBlock) UnknownMagicBlocks.WHITESTONE_SLAB.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
 
-        buttonBlock((ButtonBlock) UnknownMagicBlocks.WHITESTONE_BUTTON.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
-        pressurePlateBlock((PressurePlateBlock) UnknownMagicBlocks.WHITESTONE_PRESSURE_PLATE.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
+//        buttonBlock((ButtonBlock) UnknownMagicBlocks.WHITESTONE_BUTTON.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
+//        pressurePlateBlock((PressurePlateBlock) UnknownMagicBlocks.WHITESTONE_PRESSURE_PLATE.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
+//
+//        fenceBlock((FenceBlock) UnknownMagicBlocks.WHITESTONE_FENCE.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
+//        fenceGateBlock((FenceGateBlock) UnknownMagicBlocks.WHITESTONE_FENCE_GATE.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
+//        wallBlock((WallBlock) UnknownMagicBlocks.WHITESTONE_WALL.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
 
-        fenceBlock((FenceBlock) UnknownMagicBlocks.WHITESTONE_FENCE.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
-        fenceGateBlock((FenceGateBlock) UnknownMagicBlocks.WHITESTONE_FENCE_GATE.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
-        wallBlock((WallBlock) UnknownMagicBlocks.WHITESTONE_WALL.get(), blockTexture(UnknownMagicBlocks.WHITESTONE_BLOCK.get()));
-
-        doorBlockWithRenderType((DoorBlock) UnknownMagicBlocks.WHITESTONE_DOOR.get(), modLoc("block/whitestone_door_bottom"), modLoc("block/whitestone_door_top"), "cutout");
-        trapdoorBlockWithRenderType((TrapDoorBlock) UnknownMagicBlocks.WHITESTONE_TRAPDOOR.get(), modLoc("block/whitestone_trapdoor"), true, "cutout");
+//        doorBlockWithRenderType((DoorBlock) UnknownMagicBlocks.WHITESTONE_DOOR.get(), modLoc("block/whitestone_door_bottom"), modLoc("block/whitestone_door_top"), "cutout");
+//        trapdoorBlockWithRenderType((TrapDoorBlock) UnknownMagicBlocks.WHITESTONE_TRAPDOOR.get(), modLoc("block/whitestone_trapdoor"), true, "cutout");
 
         // Create the Varoot Stone models
-        createVarootStoneModels();
+//        createVarootStoneModels();
 
         // TODO: Remove This
-        blockWithItem(UnknownMagicBlocks.SOUND_BLOCK);
+//        blockWithItem(UnknownMagicBlocks.SOUND_BLOCK);
     }
 
     // Custom methods for extending the BlockStateProvider functionality

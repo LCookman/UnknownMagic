@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "unknownmagic:item/ether"
+    "layer0": "unknownmagic:item/solidified_ether"
   }
 }

@@ -18,6 +18,8 @@ public class UnknownMagicTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> WHITESTONE = tag("whitestone");
+        public static final TagKey<Item> ETHER_SMELTABLE = tag("ether_smeltable");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(UnknownMagic.MODID, name));
