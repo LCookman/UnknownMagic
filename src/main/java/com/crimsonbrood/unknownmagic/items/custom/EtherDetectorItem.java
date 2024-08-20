@@ -1,12 +1,10 @@
 package com.crimsonbrood.unknownmagic.items.custom;
 
-import com.crimsonbrood.unknownmagic.blocks.UnknownMagicBlocks;
-import com.crimsonbrood.unknownmagic.tags.UnknownMagicTags;
+import com.crimsonbrood.unknownmagic.tags.EtherTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -14,7 +12,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -68,6 +65,6 @@ public class EtherDetectorItem extends Item {
     }
 
     private boolean isValuableBlock(BlockState state) {
-        return state.is(UnknownMagicTags.Blocks.ETHER_DETECTABLE);
+        return state.is(EtherTags.Blocks.ETHER_DETECTABLE);
     }
 }

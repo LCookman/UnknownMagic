@@ -1,10 +1,8 @@
 package com.crimsonbrood.unknownmagic.items;
 
-import com.crimsonbrood.unknownmagic.EtherRegistrate;
 import com.crimsonbrood.unknownmagic.UnknownMagic;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -21,7 +19,7 @@ public class EtherCreativeTab extends CreativeModeTab {
     public static Builder createEtherTab(String id) {
         return CreativeModeTab.builder()
                 .title(Component.translatable("creativetab." + id))
-                .icon(() -> new ItemStack(UnknownMagicItems.SOLIDIFIED_ETHER.get()))
+                .icon(() -> new ItemStack(EtherItems.SOLIDIFIED_ETHER.get()))
                 .displayItems(new EtherItemDisplayGenerator());
     }
 

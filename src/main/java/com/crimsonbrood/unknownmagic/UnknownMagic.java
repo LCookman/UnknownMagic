@@ -1,8 +1,8 @@
 package com.crimsonbrood.unknownmagic;
 
-import com.crimsonbrood.unknownmagic.blocks.UnknownMagicBlocks;
+import com.crimsonbrood.unknownmagic.blocks.EtherBlocks;
 import com.crimsonbrood.unknownmagic.items.UnknownMagicCreativeTabs;
-import com.crimsonbrood.unknownmagic.items.UnknownMagicItems;
+import com.crimsonbrood.unknownmagic.items.EtherItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -37,8 +37,8 @@ public class UnknownMagic
     }
 
     private static void register() {
-        UnknownMagicItems.register();
-        UnknownMagicBlocks.register();
+        EtherItems.register();
+        EtherBlocks.register();
         UnknownMagicCreativeTabs.register();
     }
 }

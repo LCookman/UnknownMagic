@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/button",
-  "textures": {
-    "texture": "unknownmagic:block/whitestone_block"
-  }
-}

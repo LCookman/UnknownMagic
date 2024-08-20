@@ -59,8 +59,4 @@ public class ResourceHelper {
         return provider.withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath(),
                 provider.modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + "_bottom"));
     }
-
-    public static <T extends Item> NonNullBiConsumer<DataGenContext<Item, T>, RegistrateItemModelProvider> itemModelWithPartials() {
-        return (context, provider) -> provider.withExistingParent("item/" + context.getName(), provider.modLoc("item/" + context.getName()));
-    }
 }

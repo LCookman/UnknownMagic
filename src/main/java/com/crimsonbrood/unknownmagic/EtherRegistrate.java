@@ -18,6 +18,4 @@ public class EtherRegistrate extends AbstractRegistrate<EtherRegistrate> {
     protected @NotNull EtherRegistrate registerEventListeners(IEventBus bus) {
         return super.registerEventListeners(bus);
     }
-
-    // TODO: Implement the RegistrateRecipeProvider in order to continue
 }

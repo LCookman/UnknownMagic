@@ -1,6 +1,6 @@
 package com.crimsonbrood.unknownmagic.utility;
 
-import com.crimsonbrood.unknownmagic.blocks.UnknownMagicBlocks;
+import com.crimsonbrood.unknownmagic.blocks.EtherBlocks;
 import com.crimsonbrood.unknownmagic.blocks.custom.VarootStoneBlock;
 import com.tterrag.registrate.builders.BlockBuilder;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
@@ -12,7 +12,7 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 public class BlockStateTransformer {
     public static <B extends Block, P> NonNullUnaryOperator<BlockBuilder<B, P>> createVarootStoneModels() {
         return builder -> builder.blockstate((context, provider) -> {
-            provider.getVariantBuilder(UnknownMagicBlocks.VAROOT_STONE.get()).forAllStatesExcept(state -> {
+            provider.getVariantBuilder(EtherBlocks.VAROOT_STONE.get()).forAllStatesExcept(state -> {
                 int stateValue = state.getValue(VarootStoneBlock.STONES);
                 ResourceLocation loc;
                 int rotation = 0;
