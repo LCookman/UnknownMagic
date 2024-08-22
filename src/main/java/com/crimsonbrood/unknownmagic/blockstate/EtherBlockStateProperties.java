@@ -2,7 +2,7 @@ package com.crimsonbrood.unknownmagic.blockstate;
 
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
-public class UnknownMagicBlockStateProperties {
+public class EtherBlockStateProperties {
     public static final int MIN_STONES = 1;
     public static final int MAX_STONES = 4;
 

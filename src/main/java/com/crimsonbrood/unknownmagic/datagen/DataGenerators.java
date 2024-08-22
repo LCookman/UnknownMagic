@@ -11,8 +11,6 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.concurrent.CompletableFuture;
 
-import static com.crimsonbrood.unknownmagic.UnknownMagic.REGISTRATE;
-
 @Mod.EventBusSubscriber(modid = UnknownMagic.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
     /**
@@ -29,6 +27,8 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(), new EtherRecipeProvider(packOutput));
         generator.addProvider(event.includeServer(), EtherLootTableProvider.create(packOutput));
+
+        EtherLang.genData();
 
         EtherBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(),
                 new EtherBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));

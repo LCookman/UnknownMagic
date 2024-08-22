@@ -22,7 +22,7 @@ public class EtherItems {
             .register();
 
     /**
-     * Add the recipe here for smelting all ether smelt-ables that create solidified ether
+     * Include the recipe for smelting all ether smelt-able tags that create solidified ether
      */
     public static final ItemEntry<EtherItem> SOLIDIFIED_ETHER = REGISTRATE
             .item("solidified_ether", p -> new EtherItem(p.stacksTo(16)))
@@ -38,7 +38,7 @@ public class EtherItems {
     // TODO: Remove the below registered items and associated textures/blocks as they are mainly just tutorial items
     public static final ItemEntry<Item> STRAWBERRY = REGISTRATE
             .item("strawberry", Item::new)
-            .properties(p -> p.food(UnknownMagicFoods.STRAWBERRY))
+            .properties(p -> p.food(EtherFoods.STRAWBERRY))
             .register();
 
     public static final ItemEntry<FuelItem> PINE_CONE = REGISTRATE

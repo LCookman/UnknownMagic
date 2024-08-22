@@ -1,7 +1,7 @@
 package com.crimsonbrood.unknownmagic;
 
 import com.crimsonbrood.unknownmagic.blocks.EtherBlocks;
-import com.crimsonbrood.unknownmagic.items.UnknownMagicCreativeTabs;
+import com.crimsonbrood.unknownmagic.items.EtherCreativeTabs;
 import com.crimsonbrood.unknownmagic.items.EtherItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
@@ -39,6 +39,6 @@ public class UnknownMagic
     private static void register() {
         EtherItems.register();
         EtherBlocks.register();
-        UnknownMagicCreativeTabs.register();
+        EtherCreativeTabs.register();
     }
 }

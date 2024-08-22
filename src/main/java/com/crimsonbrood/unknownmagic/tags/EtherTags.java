@@ -12,7 +12,6 @@ public class EtherTags {
     public static class Blocks {
         public static final TagKey<Block> ETHER_DETECTABLE = tag("ether_detectable");
 
-
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(UnknownMagic.MODID, name));
         }

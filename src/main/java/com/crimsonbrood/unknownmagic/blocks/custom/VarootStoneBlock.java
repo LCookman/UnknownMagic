@@ -1,7 +1,7 @@
 package com.crimsonbrood.unknownmagic.blocks.custom;
 
 import com.crimsonbrood.unknownmagic.blocks.WaterloggableBlock;
-import com.crimsonbrood.unknownmagic.blockstate.UnknownMagicBlockStateProperties;
+import com.crimsonbrood.unknownmagic.blockstate.EtherBlockStateProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -37,7 +37,7 @@ import org.jetbrains.annotations.Nullable;
  *  3. We need to actually make a decent model for this block, maybe add more shapes to the block
  */
 public class VarootStoneBlock extends WaterloggableBlock {
-    public static final IntegerProperty STONES = UnknownMagicBlockStateProperties.STONES;
+    public static final IntegerProperty STONES = EtherBlockStateProperties.STONES;
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     private static final VoxelShape ONE_STONE_AABB = Block.box(3.0D, 0.0D, 3.0D, 12.0D, 7.0D, 12.0D);
     private static final VoxelShape MULTIPLE_STONES_AABB = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 7.0D, 15.0D);
@@ -46,7 +46,7 @@ public class VarootStoneBlock extends WaterloggableBlock {
         super(properties);
         this.registerDefaultState(
                 this.stateDefinition.any()
-                        .setValue(STONES, Integer.valueOf(UnknownMagicBlockStateProperties.MIN_STONES))
+                        .setValue(STONES, Integer.valueOf(EtherBlockStateProperties.MIN_STONES))
                         .setValue(FACING, Direction.NORTH)
         );
     }
@@ -67,7 +67,7 @@ public class VarootStoneBlock extends WaterloggableBlock {
     public BlockState getStateForPlacement(BlockPlaceContext placeContext) {
         BlockState blockState = placeContext.getLevel().getBlockState(placeContext.getClickedPos());
         if (blockState.is(this)) {
-            blockState = blockState.setValue(STONES, Integer.valueOf(Math.min(UnknownMagicBlockStateProperties.MAX_STONES, blockState.getValue(STONES) + 1)));
+            blockState = blockState.setValue(STONES, Integer.valueOf(Math.min(EtherBlockStateProperties.MAX_STONES, blockState.getValue(STONES) + 1)));
         } else {
             blockState = super.getStateForPlacement(placeContext);
             blockState = blockState.setValue(FACING, placeContext.getHorizontalDirection());
@@ -80,7 +80,7 @@ public class VarootStoneBlock extends WaterloggableBlock {
     public boolean canBeReplaced(BlockState blockState, BlockPlaceContext useContext) {
         Boolean test = !useContext.isSecondaryUseActive()
                 && useContext.getItemInHand().is(this.asItem())
-                && blockState.getValue(STONES) < UnknownMagicBlockStateProperties.MAX_STONES
+                && blockState.getValue(STONES) < EtherBlockStateProperties.MAX_STONES
                 || super.canBeReplaced(blockState, useContext);
         return test;
     }

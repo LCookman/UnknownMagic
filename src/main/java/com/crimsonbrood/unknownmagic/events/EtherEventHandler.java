@@ -3,21 +3,11 @@ package com.crimsonbrood.unknownmagic.events;
 import com.crimsonbrood.unknownmagic.Config;
 import com.crimsonbrood.unknownmagic.UnknownMagic;
 import com.mojang.logging.LogUtils;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegisterEvent;
-import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 /**
@@ -32,7 +22,7 @@ import org.slf4j.Logger;
  *  The top level event subscriber class, we may want to split this up into different more specialized files later on
  */
 @Mod.EventBusSubscriber(modid = UnknownMagic.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class UnknownMagicEventHandler {
+public class EtherEventHandler {
 
     private static final String MODID = UnknownMagic.MODID;
     private static final Logger LOGGER = LogUtils.getLogger();

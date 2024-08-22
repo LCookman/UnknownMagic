@@ -20,20 +20,20 @@ import java.util.List;
 import java.util.Objects;
 
 public class EtherDetectorItem extends Item {
-    public EtherDetectorItem(Properties pProperties) {
-        super(pProperties);
+    public EtherDetectorItem(Properties properties) {
+        super(properties);
     }
 
     @Override
-    public @NotNull InteractionResult useOn(UseOnContext pContext) {
+    public @NotNull InteractionResult useOn(UseOnContext context) {
         // We are on the server
-        if (!pContext.getLevel().isClientSide) {
-            BlockPos positionClicked = pContext.getClickedPos();
-            Player player = pContext.getPlayer();
+        if (!context.getLevel().isClientSide) {
+            BlockPos positionClicked = context.getClickedPos();
+            Player player = context.getPlayer();
             boolean foundBlock = false;
 
             for (int i = 0; i <= positionClicked.getY() + 64; i++) {
-                BlockState state = pContext.getLevel().getBlockState(positionClicked.below(i));
+                BlockState state = context.getLevel().getBlockState(positionClicked.below(i));
 
                 if (isValuableBlock(state)) {
                     outputValuableCoordinates(positionClicked.below(i), player, state.getBlock());
@@ -47,16 +47,16 @@ public class EtherDetectorItem extends Item {
             }
         }
 
-        pContext.getItemInHand().hurtAndBreak(1, Objects.requireNonNull(pContext.getPlayer()),
+        context.getItemInHand().hurtAndBreak(1, Objects.requireNonNull(context.getPlayer()),
                 player -> player.broadcastBreakEvent(player.getUsedItemHand()));
 
         return InteractionResult.SUCCESS;
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("tooltip.unknownmagic.ether_detector.tooltip"));
-        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag isAdvanced) {
+        components.add(Component.translatable("tooltip.unknownmagic.ether_detector.tooltip"));
+        super.appendHoverText(stack, level, components, isAdvanced);
     }
 
     private void outputValuableCoordinates(BlockPos blockPos, Player player, Block block) {

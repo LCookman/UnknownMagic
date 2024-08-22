@@ -17,21 +17,12 @@ public class BlockStateTransformer {
                 ResourceLocation loc;
                 int rotation = 0;
 
-                switch (stateValue) {
-                    case 1:
-                    default:
-                        loc = provider.modLoc("varoot_stones");
-                        break;
-                    case 2:
-                        loc = provider.modLoc("two_varoot_stones");
-                        break;
-                    case 3:
-                        loc = provider.modLoc("three_varoot_stones");
-                        break;
-                    case 4:
-                        loc = provider.modLoc("four_varoot_stones");
-                        break;
-                }
+                loc = switch (stateValue) {
+                    default -> provider.modLoc("varoot_stones");
+                    case 2 -> provider.modLoc("two_varoot_stones");
+                    case 3 -> provider.modLoc("three_varoot_stones");
+                    case 4 -> provider.modLoc("four_varoot_stones");
+                };
 
                 Direction direction = state.getValue(VarootStoneBlock.FACING);
                 switch (direction) {
