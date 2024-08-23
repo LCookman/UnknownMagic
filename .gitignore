@@ -26,3 +26,6 @@ forge*changelog.txt
 
 # Remove the run specific data
 run-data
+
+# Remove generated data
+src/generated/*

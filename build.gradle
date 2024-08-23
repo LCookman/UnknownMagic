@@ -13,6 +13,15 @@ base {
     archivesName = mod_id
 }
 
+// Enable Jar-In-Jar System
+jarJar.enable()
+
+reobf {
+    jarJar { }
+}
+
+tasks.jarJar.finalizedBy('reobfJarJar')
+
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -100,8 +109,10 @@ minecraft {
         }
 
         data {
-            // example of overriding the workingDirectory set in configureEach above
             workingDirectory project.file('run-data')
+
+            property 'forge.logging.markers', 'REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
@@ -113,14 +124,11 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    // Put repositories for dependencies here
-    // ForgeGradle automatically adds the Forge maven and Maven Central for you
-
-    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:flat_dir_resolver
-    // flatDir {
-    //     dir 'libs'
-    // }
+    // Add Registrate Repo
+    maven {
+        url "https://maven.tterrag.com/"
+    }
+    mavenLocal()
 }
 
 dependencies {
@@ -130,6 +138,10 @@ dependencies {
     // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    // Add the Registrate impl and jarJar configs
+    implementation fg.deobf("com.tterrag.registrate:Registrate:MC1.20-1.3.11")
+    jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: "[MC1.20-1.3.11,)")
 
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
@@ -152,6 +164,9 @@ dependencies {
 // When "copyIdeResources" is enabled, this will also run before the game launches in IDE environments.
 // See https://docs.gradle.org/current/dsl/org.gradle.language.jvm.tasks.ProcessResources.html
 tasks.named('processResources', ProcessResources).configure {
+    // If we already have files avoid the dupe error
+    processResources.duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
     var replaceProperties = [
             minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
             forge_version: forge_version, forge_version_range: forge_version_range,
@@ -182,6 +197,16 @@ tasks.named('jar', Jar).configure {
 
     // This is the preferred method to reobfuscate your jar file
     finalizedBy 'reobfJar'
+}
+
+// Make the bundled jar the default name and denote the regular jar with '-slim'
+tasks.jarJar.configure {
+    archiveClassifier = ''
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archiveClassifier = 'slim'
 }
 
 // However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing:

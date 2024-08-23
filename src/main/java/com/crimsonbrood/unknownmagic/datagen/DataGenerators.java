@@ -13,6 +13,11 @@ import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = UnknownMagic.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
+    /**
+     * NOTE: Both of the ItemModelProvider and BlockStateProviders are handled by UnknownMagic.REGISTRATE
+     *
+     * @param event the gather data event
+     */
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
@@ -20,14 +25,13 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new UnknownMagicRecipeProvider(packOutput));
-        generator.addProvider(event.includeServer(), UnknownMagicLootTableProvider.create(packOutput));
+        generator.addProvider(event.includeServer(), new EtherRecipeProvider(packOutput));
+        generator.addProvider(event.includeServer(), EtherLootTableProvider.create(packOutput));
 
-        generator.addProvider(event.includeClient(), new UnknownMagicBlockStateProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new UnknownMagicItemModelProvider(packOutput, existingFileHelper));
+        EtherLang.genData();
 
-        UnknownMagicBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(),
-                new UnknownMagicBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
-        generator.addProvider(event.includeServer(), new UnknownMagicItemTagGenerator(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
+        EtherBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(),
+                new EtherBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new EtherItemTagGenerator(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
     }
 }

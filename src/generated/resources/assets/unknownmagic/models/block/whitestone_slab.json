@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "unknownmagic:block/whitestone_block",
-    "side": "unknownmagic:block/whitestone_block",
-    "top": "unknownmagic:block/whitestone_block"
-  }
-}

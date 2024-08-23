@@ -1,6 +1,6 @@
 package com.crimsonbrood.unknownmagic.items.custom;
 
-import com.crimsonbrood.unknownmagic.items.UnknownMagicItems;
+import com.crimsonbrood.unknownmagic.items.EtherItems;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -16,7 +16,7 @@ public class EtherItem extends Item {
     @Override
     public void onInventoryTick(ItemStack stack, Level level, Player player, int slotIndex, int selectedIndex) {
         super.onInventoryTick(stack, level, player, slotIndex, selectedIndex);
-        if (stack.is(UnknownMagicItems.ETHER.get())) {
+        if (stack.is(EtherItems.SOLIDIFIED_ETHER.get())) {
             player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20));
         }
     }

@@ -1,8 +1,8 @@
 package com.crimsonbrood.unknownmagic;
 
-import com.crimsonbrood.unknownmagic.blocks.UnknownMagicBlocks;
-import com.crimsonbrood.unknownmagic.items.UnknownMagicCreativeTabs;
-import com.crimsonbrood.unknownmagic.items.UnknownMagicItems;
+import com.crimsonbrood.unknownmagic.blocks.EtherBlocks;
+import com.crimsonbrood.unknownmagic.items.EtherCreativeTabs;
+import com.crimsonbrood.unknownmagic.items.EtherItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,26 +18,27 @@ public class UnknownMagic
 {
     public static final String MODID = "unknownmagic";
     public static final String MODNAME = "Unknown Magic";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
+
+    public static final EtherRegistrate REGISTRATE = EtherRegistrate.create(MODID);
 
     public UnknownMagic()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        /*
-         Server Specific: ServerEventHandler
-         Client Specific: ClientEventHandler
-         */
-
-        UnknownMagicCreativeTabs.register(modEventBus);
-        UnknownMagicItems.register(modEventBus);
-        UnknownMagicBlocks.register(modEventBus);
+        REGISTRATE.registerEventListeners(modEventBus);
+        register();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
+
+    private static void register() {
+        EtherItems.register();
+        EtherBlocks.register();
+        EtherCreativeTabs.register();
     }
 }
